@@ -23,7 +23,7 @@
 # https://patorjk.com/software/taag/#p=display&f=Bulbhead&t=Next%20Steps%0A
 #
 # Copy This wget
-# sudo wget -O Verilog-Hackaton-Project-Files.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/master/Verilog-Hackaton-Project-Files.sh 
+# sudo wget -O Verilog-Hackaton-Project-Files.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/Verilog-Hackathon-Project-Files.sh 
 # ============================================================================
 echo "----------------------------------------------------"
 echo "cd to /home/$USER "
