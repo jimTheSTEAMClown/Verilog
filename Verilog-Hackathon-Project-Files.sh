@@ -36,7 +36,7 @@ if [ -d "/home/$USER/gowin" ];
           if [ -d "/home/$USER/gowin/basics-graphics-music" ];
             then
               echo "The Directory /home/$USER/gowin/basics-graphics-music exists"
-              Echo "❌ - You should stop and check if you really want to run the git clone command"
+              echo "❌ - You should stop and check if you really want to run the git clone command"
           fi 
 
   fi    
