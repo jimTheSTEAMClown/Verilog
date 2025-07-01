@@ -25,3 +25,49 @@
 # Copy This wget
 # sudo wget -O Verilog-Hackaton-Project-Files.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/Verilog-Hackaton-Project-Files.sh 
 # ============================================================================
+echo "----------------------------------------------------"
+echo "cd to /home/$USER "
+cd
+pwd
+if [ -d "/home/$USER/gowin" ];
+      then
+          echo "The Directory /home/$USER/gowin exists"
+          echo "Checking for Hackathon GitClone Repository of basics-graphics-music"
+          if [ -d "/home/$USER/gowin/basics-graphics-music" ];
+            then
+              echo "The Directory /home/$USER/gowin/basics-graphics-music exists"
+              Echo "❌ - You should stop and check if you really want to run the git clone command"
+          fi 
+
+  fi    
+echo " Enter y/Y or n/N or Any Other Key to Quit"
+read -p " Install Latest Verilog GitHub Clone Of Hackathon Design Files in /home/$USER/gowin?: " yesGitCloneHackathon
+# elif statements
+if [ "$yesGitCloneHackathon" == "y" ] || [ "$yesGitCloneHackathon" == "Y" ]; then
+  echo "----------------------------------------------------"
+  
+  echo "----------------------------------------------------"
+  if [ -d "/home/$USER/gowin" ];
+      then
+          echo "The Directory /home/$USER/gowin exists"
+          echo "Creating a Hackathon GitClone Repository"
+          cd /home/$USER/gowin
+          git clone https://github.com/yuri-panchul/basics-graphics-music.git
+
+  fi  
+  echo "----------------------------------------------------"
+elif [ "$yesGitCloneHackathon" == "n" ] || [ "$yesGitCloneHackathon" == "N" ]
+    then
+    echo "Skipping This Verilog GitClone Step"
+    if [ -d "/home/$USER/gowin" ];
+        then
+            echo "The Directory /home/$USER/gowin exists"
+            echo "Exiting this shell scripts"
+            exit 1
+            # return
+    fi
+else
+    echo " Any Key - Skipping This Verilog GitClone Step"
+    exit 1
+    # return
+fi
