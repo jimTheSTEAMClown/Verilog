@@ -1,0 +1,27 @@
+#!/bin/bash
+# ============================================================================
+# shell script to install the Verilog Hackathon project files
+# Source: STEAM Clown - www.steamclown.org 
+# GitHub: https://github.com/jimTheSTEAMClown/Verilog
+# Hacker: Jim Burnham - STEAM Clown, Engineer, Maker, Propmaster & Adrenologist 
+# This example code is licensed under the CC BY-NC-SA 4.0, GNU GPL and EUPL
+# https://creativecommons.org/licenses/by-nc-sa/4.0/
+# https://www.gnu.org/licenses/gpl-3.0.en.html
+# https://eupl.eu/
+# Program/Design Name:		Verilog-Hackaton-Project-Files.sh
+# Description:    shell script to restore an Ubuntu Linux Class Image (with the latest Ubuntu release) after a clean Ubuntu install 
+# Dependencies:   
+# Revision: 
+#  Revision 0.04 - Updated 06/26/2025 added VS Code command line install
+#  Revision 0.03 - Updated 06/17/2025 for SVCTE Mechatronics Class, with latest apps and tools
+#  Revision 0.02 - Updated 05/04/2024 for SVCTE Mechatronics Class
+#  Revision 0.01 - Created 05/04/2024
+# Additional Comments: 
+# https://ubuntu.com/tutorials/access-remote-desktop#1-overview
+# https://askubuntu.com/questions/1369973/how-to-connect-to-ubuntu-via-vnc-from-windows
+# https://www.makeuseof.com/tag/how-to-establish-simple-remote-desktop-access-between-ubuntu-and-windows/
+# https://patorjk.com/software/taag/#p=display&f=Bulbhead&t=Next%20Steps%0A
+#
+# Copy This wget
+# sudo wget -O Verilog-Hackaton-Project-Files.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Linux/master/Verilog-Hackaton-Project-Files.sh 
+# ============================================================================
