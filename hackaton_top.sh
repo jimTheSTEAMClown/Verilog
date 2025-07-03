@@ -11,7 +11,7 @@
 # Program/Design Name:		hackaton_top.sh
 #
 # Copy This wget
-# wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/pb2led_test.sv
+# wget -O pull_hackathon_test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/hackaton_top.sh
 # ============================================================================
 
 
@@ -24,7 +24,8 @@
     echo "File does not exist."
  fi
  
-wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/pb2led_test.sv
+wget -O pull_hackathon_test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/hackaton_top.sh
+ls
 
 echo '  ____  _____  _  _  ____ '
 echo ' (  _ \(  _  )( \( )( ___) '
