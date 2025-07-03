@@ -18,13 +18,21 @@
   echo "----------------------------------------------------"
   if [ -e hackathon_top.sv ]; then
     echo "File exists."
-    BACKUP_FILE="hackathon_top$(date +%Y%m%d_%H%M%S).svBAC"
-    mv hackathon_top.sv $BACKUP_FILE
-  else
-    echo "File does not exist."
- fi
- 
-wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
+    echo " Enter y/Y or Any Other Key to Quit"
+    read -p " Yes to BACK UP or hit any Key to continue with out backing up hackathon_top.sv?: " yesBacHackathon
+    # elif statements
+    if [ "$yesBacHackathon" == "y" ] || [ "$yesBacHackathon" == "Y" ]; then
+      echo "----------------------------------------------------"
+      echo " Backing up hackathon_top.sv "
+      echo "----------------------------------------------------"
+      BACKUP_FILE="hackathon_top$(date +%Y%m%d_%H%M%S).svBAC"
+      mv hackathon_top.sv $BACKUP_FILE
+    fi
+    else
+      echo " Any Key - Skipping The BACKUP Step"
+    fi
+  fi
+    wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
 echo "----------------------------------------------------"
 ls -l
 echo "----------------------------------------------------"
