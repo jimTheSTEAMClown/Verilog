@@ -16,15 +16,15 @@
 
 
   echo "----------------------------------------------------"
-  if [ -e "/home/$USER/gowin/basic-graphics-music/hackaton/problems/testSV/hackaton_top.sv" ]; then
+  if [ -e hackaton_top.sv ]; then
     echo "File exists."
-    BACKUP_FILE="hackathon_top_$(date +%Y%m%d_%H%M%S).sv"
-    mv /home/$USER/gowin/basic-graphics-music/hackaton/problems/testSV/hackathon_top.sv /home/$USER/gowin/basic-graphics-music/hackaton/problems/testSV/$BACKUP_FILE
+    BACKUP_FILE="hackathon__$(date +%Y%m%d_%H%M%S)_top.sv"
+    mv hackathon_top.sv $BACKUP_FILE
   else
     echo "File does not exist."
  fi
  
-wget -O pull_hackathon_test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/hackaton_top.sh
+wget -O hackathon_test.sh https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
 ls
 
 echo '  ____  _____  _  _  ____ '
