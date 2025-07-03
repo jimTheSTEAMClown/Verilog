@@ -27,6 +27,7 @@
 wget -O hackathon_test.sh https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
 ls
 
+
 echo '  ____  _____  _  _  ____ '
 echo ' (  _ \(  _  )( \( )( ___) '
 echo '  )(_) ))(_)(  )  (  )__) '
