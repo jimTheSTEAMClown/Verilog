@@ -18,7 +18,7 @@
   echo "----------------------------------------------------"
   if [ -e hackathon_top.sv ]; then
     echo "File exists."
-    BACKUP_FILE="hackathon_$(date +%Y%m%d_%H%M%S)_top.sv"
+    BACKUP_FILE="hackathon_top$(date +%Y%m%d_%H%M%S).svBAC"
     mv hackathon_top.sv $BACKUP_FILE
   else
     echo "File does not exist."
