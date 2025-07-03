@@ -24,7 +24,7 @@
     echo "File does not exist."
  fi
  
-wget -O hackathon_test.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
+wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
 ls -l
 
 
