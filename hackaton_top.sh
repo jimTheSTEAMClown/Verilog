@@ -26,7 +26,7 @@ if [ -e hackathon_top.sv ]; then
     echo "----------------------------------------------------"
     echo " Backing up hackathon_top.sv "
     echo "----------------------------------------------------"
-    BACKUP_FILE="hackathon_top$(date +%Y%m%d_%H%M%S).svBAC"
+    BACKUP_FILE="hackathon_top_$(date +%Y%m%d_%H%M%S).svBAC"
     mv hackathon_top.sv "$BACKUP_FILE"
   else
     echo " Any Key - Skipping The BACKUP Step"
