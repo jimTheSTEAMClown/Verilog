@@ -16,7 +16,7 @@
 
 
   echo "----------------------------------------------------"
-  if [ -e hackaton_top.sv ]; then
+  if [ -e hackathon_top.sv ]; then
     echo "File exists."
     BACKUP_FILE="hackathon__$(date +%Y%m%d_%H%M%S)_top.sv"
     mv hackathon_top.sv $BACKUP_FILE
@@ -25,7 +25,7 @@
  fi
  
 wget -O hackathon_test.sh https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
-ls
+ls -l
 
 
 echo '  ____  _____  _  _  ____ '
