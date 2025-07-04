@@ -4,7 +4,7 @@
 ### Delete Later - Do List - any one can pick these up and do them:
 > [!NOTE] 2025-07-04 - STEAM - I will working on the Gates/Mux section labs today. connect on telegram or interact through this do when you push.  
 > [!NOTE]❓- (STEAM Clown) - Suggest a better title for this document.  Make some suggestions here to have this doc communicate better what we are trying to do.  "teaching verilg, showing steps to implement in hardware, help students gain a marketible skill."  
-> [ToDo] 🚧- Update any section paragraphs to have breaks to make them more readable. make these breaks 78 characters to accommodate 78+CR+LF  
+> [ToDo] 🚧- (AnyOne) Update any section paragraphs to have breaks to make them more readable. make these breaks 78 characters to accommodate 78+CR+LF  
 
 ### Delete Later - Methods to show progress:
 If you want to show you are still working or done, add the following:  
