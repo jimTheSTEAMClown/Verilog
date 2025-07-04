@@ -95,8 +95,73 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 ## Verilog Labs
 ---
 > [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/yuri-panchul/basics-graphics-music/tree/main) in the [Problems](https://github.com/yuri-panchul/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
-> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
+> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?
 
+### Lab Template <-- Put the lab title here
+
+#### Gates & Muxes Introduction
+> [!NOTE] - This section should link to a presentation.  Short explanation can be here, but really this should be linked to a presentation, and other resources to teach about this.  My plan for my class is to have a presentation, "Dig Deeper" assignments, some additional resources, and then a set of quiz questions.  This will be implemented in a Canvas LMS, and I'll publish this later in Jan 2026.
+
+Give an overview for this component.  Include a "Why are we doing this step in this order".  This can be a short or long or multiple paragraphs. 
+Overview of component
+* This Step will include… < list what they are going to accomplish >
+* This Step should take about N minutes to complete. 
+
+#### Logic Gates Verilog Code
+> [!NOTE] - This section will show the Verilog code examples, explain how it works, and any new Verilog structures
+**Logic Gates Verilog Code Introduction**
+Add a overview of how Logic Gate code works, and a few paragraphs of what are the logic gates, and what they look like in Verilog
+```Verilog
+Some code in Verilog
+```
+##### Target Hardware Setup and Pin Description
+> [!NOTE] - This section should link to a presentation.
+> [!NOTE] - This section should have a picture showing the Gowin FPGA and GPIO module and the connections
+**GPIO Module - Hardware:** discription of hardware module and pins description as it's used i this lab.
+![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
+**GPIO Module - Pin Description:**
+> [!NOTE] - This should be a table of 3 columns: periferal pin, FPGA pin, Description
+| HW-154 Board Pin  |     FPGA Pin      |          Description                                    |
+| ----------------- | ----------------- | ------------------------------------------------------- |
+| J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |
+| J1-CLK            | GPIO-26           | CLK (Clock) for synchronizing the data transfer         |
+| J1- STB           | GPIO-27           | STB (Strobe) chip select or enable for communication    |
+| J1- GND           | GND               | GND                                                     |
+| J1- VCC           | VCC 3.3 V         | VCC 3.3 V                                               |
+
+##### Target Software, Tools, Libraries & Drivers Setup
+> [!NOTE] - This section will cover any specific software, tools, Libraries or Drivers that are used
+
+##### Verilog Logic Gate Labs / Challenges
+> [!NOTE] - This section will explain the specific Verilog Lab, what the goals are and outline the challenges.
+```Verilog
+Some code in Verilog
+```
+###### 🛠️ LAB Activity: Challenge Name #1
+**Verilog Code**
+Explain the challenge
+```Verilog
+Some code in Verilog
+```
+**What Success Looks Like**
+describe what a successful completion of the lab looks like
+
+###### 🛠️ LAB Activity: Challenge Name #2
+**Verilog Code**
+Explain the challenge
+```Verilog
+Some code in Verilog
+```
+**Running the FPGA Bash scripts**
+This section will cover how and where to run the Verilog compile scripts to target the FPGA
+
+**What Success Looks Like**
+Describe what a successful completion of the lab looks like
+
+##### Next Steps - Dig Deeper
+Provide some additional resourses or assignments to look at
+
+---
 ### Gates & Muxes
 #### Gates & Muxes Introduction
 > [!NOTE] - This section should link to a presentation.  Short explanation can be here, but really this should be linked to a presentation, and other resources to teach about this.  My plan for my class is to have a presentation, "Dig Deeper" assignments, some additional resources, and then a set of quiz questions.  This will be implemented in a Canvas LMS, and I'll publish this later in Jan 2026.
