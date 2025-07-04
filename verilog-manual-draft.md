@@ -22,7 +22,7 @@ If you want to show you are still working or done, add the following:
 ---
 ### Links That will be deleted later
 **Verilog Text Books**
-* 
+* [NOT A LINK WE CAN SHARE - Digital Design and Computer Architecture](https://www.r-5.org/files/books/computers/hw-layers/hardware/digital-desigh/David_Harris_Sarah_Harris-Digital_Design_and_Computer_Architecture-EN.pdf)
 **OLD Google Doc - jorge.zavala@gmail.com**
 * [Old Google Document](https://docs.google.com/document/d/1Z1MZMz6SOwn6kjaCy0DiFt3yNVrN_1zEZgmNQC1ft-Q/edit?usp=sharing)  
 **Yuri's Presentations**
@@ -99,7 +99,7 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 
 ### Lab Template <-- Put the lab title here
 
-#### Gates & Muxes Introduction
+#### Lab Name - Introduction
 > [!NOTE] - This section should link to a presentation.  Short explanation can be here, but really this should be linked to a presentation, and other resources to teach about this.  My plan for my class is to have a presentation, "Dig Deeper" assignments, some additional resources, and then a set of quiz questions.  This will be implemented in a Canvas LMS, and I'll publish this later in Jan 2026.
 
 Give an overview for this component.  Include a "Why are we doing this step in this order".  This can be a short or long or multiple paragraphs. 
@@ -107,9 +107,9 @@ Overview of component
 * This Step will include… < list what they are going to accomplish >
 * This Step should take about N minutes to complete. 
 
-#### Logic Gates Verilog Code
+#### Lab Title - Verilog Code Eplanation
 > [!NOTE] - This section will show the Verilog code examples, explain how it works, and any new Verilog structures
-**Logic Gates Verilog Code Introduction**
+**Verilog Code Used In This Lab**
 Add a overview of how Logic Gate code works, and a few paragraphs of what are the logic gates, and what they look like in Verilog
 ```Verilog
 Some code in Verilog
