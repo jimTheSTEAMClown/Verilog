@@ -1,5 +1,4 @@
 # Verilog Hackathon Education Kit Manual  
-
 ---
 ### Delete Later - Do List - any one can pick these up and do them:
 > [!NOTE] 2025-07-04 - (STEAM Clown) - I will working on the Gates/Mux section labs today. connect on telegram or interact through this do when you push.  
@@ -19,8 +18,6 @@ If you want to show you are still working or done, add the following:
 > [!NOTE] ❎- If you see a note 📝 assigned to you or if you are going to accept it, replace it with a ❎  
 > [!NOTE] ❓- your name - Use this to ask a question to other writers/editors  
 > [!NOTE] 🅰️- your name - Use this to aswer the question
-
-
 
 ---
 ### Links That will be deleted later
