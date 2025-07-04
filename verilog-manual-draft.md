@@ -8,13 +8,14 @@
 
 ### Delete Later - Methods to show progress:
 If you want to show you are still working or done, add the following:  
-> [!NOTE]🚧- Construction emoji, means you are still working on this section  
-> [!NOTE]✅- Done with this task
-> [!NOTE]❌- red "x", means you are not done, have not started, or are in progress
-> [!NOTE]📝- This is a note to others. You can assign these notes to all or to a specific person.  
-> [!NOTE]❎- If you see a note 📝 assigned to you or if you are going to accept it, replace it with a ❎  
-> [!NOTE]❓- <your name> - Use this to ask a question to other writers/editors  
-> [!NOTE]🅰️- <your name> - Use this to aswer the question  
+> [!NOTE] 🚧- Construction emoji, means you are still working on this section  
+> [!NOTE] ✅- Done with this task
+> [!NOTE] ❌- red "x", means you are not done, have not started, or are in progress
+> [!NOTE] 📝- This is a note to others. You can assign these notes to all or to a specific person.  
+> [!NOTE] ❎- If you see a note 📝 assigned to you or if you are going to accept it, replace it with a ❎  
+> [!NOTE] ❓- <your name> - Use this to ask a question to other writers/editors  
+> [!NOTE] 🅰️- <your name> - Use this to aswer the question
+
 ### Delete Later - Notes to Writers:
 > [!NOTE] - Suggest a better title for this document  
 > [!NOTE] - Just so you know, I'm (STEAM Clown) an going to be just editing this doc in place, so if you make a fork, just make sure you check it in correctly
