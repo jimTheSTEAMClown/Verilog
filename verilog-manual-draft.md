@@ -80,11 +80,58 @@ One of Verilog’s strengths is that it lets you describe hardware at different 
 Verilog is widely used because it scales well with complexity. It's much easier to manage a large project in Verilog than with a schematic. Designs written in Verilog are portable. They don’t depend on a specific chip or manufacturing process, which makes it easier to reuse and adapt them to FPGA or ASIC design flows.    
 
 Verilog gives hardware engineers a way to write and test their designs using code. This approach makes debugging, simulation, and development faster and more flexible.  This is important for modern parameterized digital systems that would be impractical to handle graphically with Schematics.  
-  
-### ASIC vs FPGA: What’s the Difference?  
-> [!NOTE]🚧- Anyone can work on this... It probably should link to an overview presentation  
-### Verilog Design Flow Overview (Simulation, Synthesis, Implementation)  
-> [!NOTE]🚧- Anyone can work on this... It probably should link to an overview presentation  
+
+### ASIC vs FPGA: What’s the Difference?
+
+> [!NOTE]🚧- ❎ Max is working on this
+
+ASIC chip is manufactured from library elements (that is a list of
+very basic logic primitives like INV, AND, OR, different types of flip-flops
+that could be used). Types, quantities, placement and connections between the
+elements are design specific.
+
+On the other hand, FPGA chip is manufactured with reconfigurable logic
+elements, and the Verilog design is mapped on pre-existing logic and then
+connected accordingly. Instead of making combinational logic out of certain
+primitives, FPGA utilizes LUTs (lookup tables) that allow configuring generic
+table into any logic function.
+
+So on FPGA you are limited with existing number of LUTs, memories, and other
+utility blocks like multipliers, while for ASIC you can use any number of
+library elements as long as you have area on the die to fit them.
+
+FPGA is a great platform for prototyping, because you can easily
+reconfigure the chip after making changes in Verilog source code. Meanwhile
+ASIC is a huge commitment, because after sending the final design to the
+factory you have to wait for several months before the first batch of chips
+would be made. And if there would be a fault in the design, a fix would cost a
+lot of additional time and money.
+
+The same Verilog design would be able to reach much higher clock frequency in
+ASIC than on FPGA, due to length of FPGA interconnect fabric, LUT delay and
+fixed placement of elements affecting timing.
+
+### Verilog Design Flow Overview
+
+> [!NOTE]🚧- ❎ Max is working on this
+
+![OpenROAD layout result](images/openroad_layout.png)
+
+On a high level, typical design flow has these stages:
+
+* **RTL design** - Writing Verilog code
+* **Verification** - Running Verilog code in simulation with a test program,
+that checks the output of RTL against software model
+* **Synthesis** - Converting Verilog description into a gate-level netlist of
+primitives for target architecture. Netlist specifies elements and connections
+between them, they are not physically placed yet.
+* **Place and Route** - Assigning elements a place on the chip, then routing
+them together
+
+* [ASIC specific] **GDSII** - Final topology file is created that is sent to the
+factory
+* [FPGA specific] **Bitstream generation** - Generate bitstream and upload to
+the board
 
 ## Introduction To Kit Hardware  
 ### Gowin FPGA Board - Tang-Nano Introduction 
@@ -95,17 +142,7 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 
 #### 🛠️ LAB Activity: Gowin FPGA Board - Tang-Nano Setup & Hardware Connections    
 > [!NOTE]🚧- This section will show the connection of just the FPGA Board & GPIO board
-
-#### 🛠️ LAB Activity: Hello World - Blinking An LED    
-> [!NOTE]🚧- This section will show the working design, running the scripts, and seeing that the hardware works, proving that your systems is working.
-
-
 ---
-## Verilog Labs
----
-> [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/yuri-panchul/basics-graphics-music/tree/main) in the [Problems](https://github.com/yuri-panchul/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
-> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?
-
 ### Lab Template <-- Put the lab title here
 
 #### Lab Name - Introduction
@@ -169,8 +206,19 @@ Describe what a successful completion of the lab looks like
 
 ##### Next Steps - Dig Deeper
 Provide some additional resourses or assignments to look at
+---
 
 ---
+#### 🛠️ LAB Activity: Hello World - Blinking An LED    
+> [!NOTE]🚧- This section will show the working design, running the scripts, and seeing that the hardware works, proving that your systems is working.
+
+
+---
+## Verilog Labs
+---
+> [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/yuri-panchul/basics-graphics-music/tree/main) in the [Problems](https://github.com/yuri-panchul/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
+> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
+
 ### Gates & Muxes
 #### Gates & Muxes Introduction
 > [!NOTE] - This section should link to a presentation.  Short explanation can be here, but really this should be linked to a presentation, and other resources to teach about this.  My plan for my class is to have a presentation, "Dig Deeper" assignments, some additional resources, and then a set of quiz questions.  This will be implemented in a Canvas LMS, and I'll publish this later in Jan 2026.
