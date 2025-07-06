@@ -166,7 +166,8 @@ Some code in Verilog
 > [!NOTE] - This section should have a picture showing the Gowin FPGA and GPIO module and the connections
 **GPIO Module - Hardware:** discription of hardware module and pins description as it's used i this lab.
 ![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
-**GPIO Module - Pin Description:**
+
+**GPIO Module - Pin Description:**  
 | HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
 | ----------------- | ----------------- | ------------------------------------------------------- |  
 | J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |  
@@ -306,7 +307,8 @@ Some code in Verilog
 > [!NOTE] - This section should have a picture showing the Gowin FPGA and GPIO module and the connections
 **GPIO Module - Hardware:** discription of hardware module and pins description as it's used i this lab.
 ![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
-**GPIO Module - Pin Description:**  
+
+**GPIO Module - Pin Description:**
 | HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
 | ----------------- | ----------------- | ------------------------------------------------------- |  
 | J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |  
