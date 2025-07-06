@@ -297,11 +297,328 @@ assign led[1] = key[0] | key[1];
 
 [!NOTE] I'll add the XOR, NOR,NAND, XNOR later
 
-**Logic Gates Verilog Code Introduction**
-Add a overview of how Logic Gate code works, and a few paragraphs of what are the logic gates, and what they look like in Verilog
+**Logic Gates Verilog Code Introduction**  
+If you follwoed the GITHub clone instructions, you should have the following directory path:  
+**~/gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes/** where you will find the file **hackathon_top.sv**  
+
+Open the **hackathon_top.sv** in a code editor,  VS-Code is recomended, but any text editor will work.  
+
+Let's review the Verilog syntax in this top level Verilog File.
+
 ```Verilog
-Some code in Verilog
+// Board configuration: tang_nano_9k_lcd_480_272_tm1638_hackathon
+// This module uses few parameterization and relaxed typing rules
+
+module hackathon_top
+(
+    input  logic       clock,
+    input  logic       slow_clock,
+    input  logic       reset,
+
+    input  logic [7:0] key,
+    output logic [7:0] led,
+
+    // A dynamic seven-segment display
+
+    output logic [7:0] abcdefgh,
+    output logic [7:0] digit,
+
+    // LCD screen interface
+
+    input  logic [8:0] x,
+    input  logic [8:0] y,
+
+    output logic [4:0] red,
+    output logic [5:0] green,
+    output logic [4:0] blue,
+
+    inout  logic [3:0] gpio
+);
+
+    //------------------------------------------------------------------------
+
+    // Gates, wires and continuous assignments
+
+    assign led [0] = key [0] & key [1];
+
+    // Exercise 1: Change the code above.
+    // Assign to led [0] the result of OR operation (|).
+
+    wire a = key [0];  // Note a new construct - wire
+    wire b = key [1];
+
+    assign led [1] = a ^ b; // XOR - eXclusive OR
+
+    //------------------------------------------------------------------------
+
+    // Signals for demoing multiplexers
+
+    assign sel = key [7];
+    assign d1  = key [6];
+    assign d0  = key [5];
+
+    //------------------------------------------------------------------------
+
+    // Five different implementations
+
+    always_comb  // Combinational always block
+    begin
+        if (sel == 1)     // If sel == 1
+            led [7] = d1;  //    Output value of "a" to led [0]
+        else
+            led [7] = d0;  //    Output value of "b" to led [0]
+    end
+
+    //------------------------------------------------------------------------
+
+    /*
+
+    // "== 1" is not necessary
+    // because Boolean value can be used as an "if" condition
+
+    always_comb  // Combinational always block
+    begin
+        if (sel)
+            led [7] = d1;
+        else
+            led [7] = d0;
+    end
+
+    */
+
+    //------------------------------------------------------------------------
+
+    assign led [6] = sel ? d1 : d0;  // If sel == 1, choose d1, otherwise d0
+
+    //------------------------------------------------------------------------
+
+    // You can also use "case" like "switch" in "C"
+
+    always_comb
+    begin
+        case (sel)
+        1: led [5] = d1;
+        0: led [5] = d0;
+        endcase
+    end
+
+    //------------------------------------------------------------------------
+
+    /*
+
+    // If you have only one statement you can omit "begin/end"
+
+    always_comb
+        if (sel)
+            led [7] = d1;
+        else
+            led [7] = d0;
+
+    always_comb
+        case (sel)
+        1: led [5] = d1;
+        0: led [5] = d0;
+        endcase
+
+    */
+
+    //------------------------------------------------------------------------
+
+    // The construct "{ , }" is called "concatenation"
+
+    wire [1:0] d = { d1, d0 };
+    assign led [4] = d [sel];
+
+    // If sel == 0, we choose d [0] which is equal to d0
+    // If sel == 1, we choose d [1] which is equal to d1
+
+    //------------------------------------------------------------------------
+
+    // Exercise: Implement mux
+    // without using "?" operation, "if", "case" or a bit selection.
+    // Use only operations "&", "|", "~" and parenthesis, "(" and ")".
+
+    //------------------------------------------------------------------------
+
+    // Exercise: Implement a mux that chooses between four inputs
+    // using two-bit selector.
+
+endmodule
 ```
+---
+**Comment to controle the FPGA Bash flow**
+```
+// Board configuration: tang_nano_9k_lcd_480_272_tm1638_hackathon
+// This module uses few parameterization and relaxed typing rules
+```
+These 2 comments in Verilog is used by the Bash scripts that generate the FPGA files.  Please don't edit these comments.  
+
+**Top Verilog Block Inputs and Outputs**  
+```
+module hackathon_top
+(
+    input  logic       clock,
+    input  logic       slow_clock,
+    input  logic       reset,
+
+    input  logic [7:0] key,
+    output logic [7:0] led,
+
+    // A dynamic seven-segment display
+
+    output logic [7:0] abcdefgh,
+    output logic [7:0] digit,
+
+    // LCD screen interface
+
+    input  logic [8:0] x,
+    input  logic [8:0] y,
+
+    output logic [4:0] red,
+    output logic [5:0] green,
+    output logic [4:0] blue,
+
+    inout  logic [3:0] gpio
+);
+```
+This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your design.  While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO board using a serial bus, you can imagine the following block diagram reprisentation.  
+
+<pre> 
+┌────────────────────┐               ┌───────────────────┐
+│Hackathon Top (FPGA)│                │    GPIO Module   │
+│                    │                │                  │
+│   input  key[0]    │ ◄───────────── |  Push Button 0   │
+│   input  key[1]    │ ◄───────────── |  Push Button 1   │
+│   input  key[2]    │ ◄───────────── |  Push Button 2   │
+│   input  key[3]    │ ◄───────────── |  Push Button 3   │
+│   input  key[4]    │ ◄───────────── |  Push Button 4   │
+│   input  key[5]    │ ◄───────────── |  Push Button 5   │
+│   input  key[6]    │ ◄───────────── |  Push Button 6   │
+│   input  key[7]    │ ◄───────────── |  Push Button 7   │
+│                    │                │                  │
+│   output led[0]    │ ─────────────► |  LED 0           │
+│   output led[1]    │ ─────────────► |  LED 1           │
+│   output led[2]    │ ─────────────► |  LED 2           │
+│   output led[3]    │ ─────────────► |  LED 3           │
+│   output led[4]    │ ─────────────► |  LED 4           │
+│   output led[5]    │ ─────────────► |  LED 5           │
+│   output led[6]    │ ─────────────► |  LED 6           │
+│   output led[7]    │ ─────────────► |  LED 7           │
+└────────────────────┘                └──────────────────┘
+
+</pre>
+
+```
+    //------------------------------------------------------------------------
+
+    // Gates, wires and continuous assignments
+
+    assign led [0] = key [0] & key [1];
+
+    // Exercise 1: Change the code above.
+    // Assign to led [0] the result of OR operation (|).
+
+    wire a = key [0];  // Note a new construct - wire
+    wire b = key [1];
+
+    assign led [1] = a ^ b; // XOR - eXclusive OR
+
+    //------------------------------------------------------------------------
+
+    // Signals for demoing multiplexers
+
+    assign sel = key [7];
+    assign d1  = key [6];
+    assign d0  = key [5];
+
+    //------------------------------------------------------------------------
+
+    // Five different implementations
+
+    always_comb  // Combinational always block
+    begin
+        if (sel == 1)     // If sel == 1
+            led [7] = d1;  //    Output value of "a" to led [0]
+        else
+            led [7] = d0;  //    Output value of "b" to led [0]
+    end
+
+    //------------------------------------------------------------------------
+
+    /*
+
+    // "== 1" is not necessary
+    // because Boolean value can be used as an "if" condition
+
+    always_comb  // Combinational always block
+    begin
+        if (sel)
+            led [7] = d1;
+        else
+            led [7] = d0;
+    end
+
+    */
+
+    //------------------------------------------------------------------------
+
+    assign led [6] = sel ? d1 : d0;  // If sel == 1, choose d1, otherwise d0
+
+    //------------------------------------------------------------------------
+
+    // You can also use "case" like "switch" in "C"
+
+    always_comb
+    begin
+        case (sel)
+        1: led [5] = d1;
+        0: led [5] = d0;
+        endcase
+    end
+
+    //------------------------------------------------------------------------
+
+    /*
+
+    // If you have only one statement you can omit "begin/end"
+
+    always_comb
+        if (sel)
+            led [7] = d1;
+        else
+            led [7] = d0;
+
+    always_comb
+        case (sel)
+        1: led [5] = d1;
+        0: led [5] = d0;
+        endcase
+
+    */
+
+    //------------------------------------------------------------------------
+
+    // The construct "{ , }" is called "concatenation"
+
+    wire [1:0] d = { d1, d0 };
+    assign led [4] = d [sel];
+
+    // If sel == 0, we choose d [0] which is equal to d0
+    // If sel == 1, we choose d [1] which is equal to d1
+
+    //------------------------------------------------------------------------
+
+    // Exercise: Implement mux
+    // without using "?" operation, "if", "case" or a bit selection.
+    // Use only operations "&", "|", "~" and parenthesis, "(" and ")".
+
+    //------------------------------------------------------------------------
+
+    // Exercise: Implement a mux that chooses between four inputs
+    // using two-bit selector.
+
+endmodule
+
 ##### Target Hardware Setup and Pin Description
 > [!NOTE] - This section should link to a presentation.
 > [!NOTE] - This section should have a picture showing the Gowin FPGA and GPIO module and the connections
