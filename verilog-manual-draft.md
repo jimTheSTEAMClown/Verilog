@@ -297,7 +297,8 @@ assign led[1] = key[0] | key[1];
 
 [!NOTE] I'll add the XOR, NOR,NAND, XNOR later
 
-**Logic Gates Verilog Code Introduction**  
+#### Logic Gates Verilog Code Introduction
+
 If you followed the GITHub clone instructions, you should have the following directory path:  
 **~/gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes/** where you will find the file **hackathon_top.sv**  
 
@@ -307,13 +308,16 @@ Let's review the Verilog syntax in this top level Verilog File.
 
 ---
 **Comment Used To Control The FPGA Bash flow**
+
+These 2 comments in Verilog is used by the Bash scripts that generate the FPGA files.  Please don't edit these comments.  
 ```
 // Board configuration: tang_nano_9k_lcd_480_272_tm1638_hackathon
 // This module uses few parameterization and relaxed typing rules
 ```
-These 2 comments in Verilog is used by the Bash scripts that generate the FPGA files.  Please don't edit these comments.  
 
 **Top Verilog Block Inputs and Outputs**  
+This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your Top Level Verilog Block.  
+
 ```
 module hackathon_top
 (
@@ -341,8 +345,7 @@ module hackathon_top
     inout  logic [3:0] gpio
 );
 ```
-This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your Top Level Verilog Block.  
-
+We are going to only look at the GPIO Board - Switches & LEDs section
 ```
 // GPIO Board - Switches & LEDs
 input  logic [7:0] key,
@@ -402,7 +405,22 @@ While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO 
 [!NOTE] We should have code in this first lab that startes with 
 > assign led [0] = key [0];
 > assign led [1] = key [1];
+> And then have the first lab to connect Led [6] and led[7] to key[6] and key[7]
+> before we have them do the logic gates.
 
+**Gate, Wire, and Continus Assignments**  
+Let's see how to connect and generate an **AND** gate. in the assign statment below, we are connecting the inputs key[0] and key[1] to the led[0].  the **&** that you see in the right hand side of the assignment **=** sign is telling this assign statment to preform a Bitwise AND operation between key[0] and key[1].
+
+Only when both buttons **key[0]** and **key[1]** are pressed (value 1), **led[0]** will be turned ON (1).
+
+**assign** is a continuous assignment, which creates combinational logic—the output updates automatically and immediately when inputs change.
+
+This will look like the following schematic diagram:
+**Logic Diagram**  
+<pre>   key[0] ----\ 
+               AND ---> led[0] 
+   key[1] ----/ </pre>
+   
 ```
     //------------------------------------------------------------------------
 
@@ -412,7 +430,56 @@ While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO 
 
     // Exercise 1: Change the code above.
     // Assign to led [0] the result of OR operation (|).
+```
+##### Exercise 1: Change AND to OR
+change the code **assign led [0] = key [0] & key [1];** to preform an **OR** assignment 
 
+**Hint**: \| is the bitwise OR operator. When you replace the & bitwise operator with \| the the result assigned to the led[0] is true (1) if either key[0] or key[1] is pressed. 
+<pre>   key[0] ----\ 
+               OR ---> led[0] 
+   key[1] ----/ </pre>
+
+Edit your code, save it, and in your consol window, run the bash script **03_synthesize_for_fpga.bash**
+
+**Success?** When you press the key[0] the led[0] should now light up.  if you then only press key[1], the led[0] should also still light up.  If you press both key[0] and key[1], led[0] should also ligh up, because this is a bitwise **OR** will respond to either key[0], key[1] or both.
+
+#### Wire assigments - Aliasing signals  
+**What is a Verilog "wire"?**  
+
+In Verilog, a **wire** is one of the most fundamental data types used to model physical electrical connections. A wire represents a combinational signal. A wire is something that is driven by some other logic but does not store a value on its own.  
+- Think of it like a copper wire on a breadboard. It connects components together.
+- It simply carries signals from one point to another.
+- It has no "memory". Wires are not like a register or variable that stores state. (You will learn about these later)
+
+**Why and how should you use a "wire"**   
+ - Connecting inputs to internal logic.
+ - Connecting outputs of logic gates to module outputs.
+ - Breaking up complex expressions into smaller parts.
+ - Improving readability with aliases.
+
+**Example Verilog Code With Wire Assignments**
+```
+  wire a = key[0];
+  wire b = key[1];
+  assign led[0] = a & b;
+```
+- wire a = key[0]; means: connect the wire a to the bit key[0].
+- 'a' now acts exactly like key[0], it's just a more readable or convenient name.
+- Then, you can write logic expressions using a and b like variables, but they are just "wires."
+
+Take a look at these diagrams and make sure you understand that they are equvelent:
+<pre>   key[0] ----\ 
+               AND ---> led[0] 
+   key[1] ----/ 
+
+<pre>   key[0] ----> a ----\ 
+                       AND ---> led[0] 
+   key[1] ----> /  a ----/</pre>
+</pre>
+
+##### Exercise 2: Use a wire assigment
+
+```
     wire a = key [0];  // Note a new construct - wire
     wire b = key [1];
 
