@@ -268,7 +268,71 @@ assign led[0] = key[0] & key[1];
 | 0       | 0       | 0            |
 | 0       | 1       | 0            |
 | 1       | 0       | 0            |
-| 1       | 1       | 1            |
+| 1       | 1       | 1            |  
+
+#### OR 
+An **OR** gate outputs 1 if at least one input is 1. It’s used when any of several inputs can activate a result.  An example would let an ouput LED turn on if either button A or button B were presed.  Only one of the inputs needs to be active to create a logical result of a 1 on the output.  
+
+**Logical Rules**  
+| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
+| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
+| **OR**   | \`     | \`                                          | Output is `1` if **at least one input is 1**  | \`a    | b\`  |
+
+**Verilog Example**  
+```Verilog
+assign led[1] = key[0] | key[1];  
+```
+
+**Logic Diagram**  
+
+ key[0] ----\  
+             OR ---> led[0]  
+ key[1] ----/  
+
+**Truth Table**  
+| Input[1] | Input[0] | Output (OR) |
+| ------- | ------- | ------------ |
+| 0       | 0       | 0            |
+| 0       | 1       | 1            |
+| 1       | 0       | 1            |
+| 1       | 1       | 1            |  
+
+
+#### AND 
+An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
+**Logical Rules**  
+| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
+| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
+| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
+
+**Verilog Example**  
+```Verilog
+assign led[0] = key[0] & key[1];
+```
+
+**Logic Diagram**  
+
+ key[0] ----\  
+             AND ---> led[0]  
+ key[1] ----/  
+
+**Truth Table**  
+| Input[1] | Input[0] | Output (AND) |
+| ------- | ------- | ------------ |
+| 0       | 0       | 0            |
+| 0       | 1       | 0            |
+| 1       | 0       | 0            |
+| 1       | 1       | 1            |  
+
+
+| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
+| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
+| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
+| **OR**   | \`     | \`                                          | Output is `1` if **at least one input is 1**  | \`a    | b\`  |
+| **XOR**  | `^`    | Output is `1` if **inputs are different**   | `a ^ b`                                       |        |      |
+| **NAND** | `~&`   | Output is `1` unless **both inputs are 1**  | `~(a & b)`                                    |        |      |
+| **NOR**  | \`\~   | \`                                          | Output is `1` only when **both inputs are 0** | \`\~(a | b)\` |
+| **XNOR** | `~^`   | Output is `1` if **inputs are the same**    | `~(a ^ b)`                                    |        |      |
 
 
 
