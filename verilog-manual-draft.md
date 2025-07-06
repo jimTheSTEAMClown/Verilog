@@ -473,7 +473,7 @@ Take a look at these diagrams and make sure you understand that they are equvele
    key[1] ----/ 
 
    key[0] ----> a ----\ 
-                  AND ---> led[0] 
+                       AND ---> led[0] 
    key[1] ----> a ----/</pre>
 </pre>
 
