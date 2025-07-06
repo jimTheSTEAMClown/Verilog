@@ -222,17 +222,17 @@ Provide some additional resourses or assignments to look at
 
 ### Gates & Muxes
 #### Gates & Muxes Introduction
-In this first set of Verilog Labs, you are going to learn about Verilog Logic Gates and Multiplexers, called a Mux from now on.  
+In this first set of Verilog Labs, you are going to learn about Verilog **Logic Gates** and **Multiplexers** (Mux).  
 
 **Logic gates** are the building blocks of digital circuits. They process binary input values (0 or 1) and produce binary outputs based on specific logical rules. You use logic gates to build everything from simple decision-making circuits to complex CPUs and FPGAs.
-> Learn how to create simple logic gates using Verilog.
-> Use wire and assign statements to build AND, OR, XOR, NAND, NOR, and XNOR gates.
-> Control onboard LEDs using push button inputs to visualize the gate behavior.
+* Learn how to create simple logic gates using Verilog.
+* Use wire and assign statements to build AND, OR, XOR, NAND, NOR, and XNOR gates.
+* Control onboard LEDs using push button inputs to visualize the gate behavior.
 
 A **Multiplexer** (MUX) is a digital switch that selects one of several input signals and forwards it to a single output, based on control (select) signals.
-> Build a 2-to-1 MUX using assign out = sel ? in1 : in0;
-> Observe how changing the select signal affects the output LED
-> Learn how to extend MUX structures to support more inputs or wider data
+* Build a 2-to-1 MUX using assign out = sel ? in1 : in0;
+* Observe how changing the select signal affects the output LED
+* Learn how to extend MUX structures to support more inputs or wider data
 
 In the following labs you will explor the Verilog syntax and coding structurs to build Logic Gates and Mux's
 
