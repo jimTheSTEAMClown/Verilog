@@ -257,11 +257,9 @@ assign led[0] = key[0] & key[1];
 ```
 
 **Logic Diagram**  
-<pre> 
-  key[0] ----\ 
+<pre>   key[0] ----\ 
               AND ---> led[0] 
-  key[1] ----/ 
-</pre>
+  key[1] ----/ </pre>
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (AND) |
@@ -285,11 +283,9 @@ assign led[1] = key[0] | key[1];
 ```
 
 **Logic Diagram**  
-<pre> 
-key[0] ----\ 
+<pre> key[0] ----\ 
             OR ---> led[0] 
-key[1] ----/ 
-</pre>
+key[1] ----/ </pre>
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (OR) |
@@ -299,46 +295,7 @@ key[1] ----/
 | 1       | 0       | 1            |
 | 1       | 1       | 1            |  
 
-
-#### AND 
-An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
-**Logical Rules**  
-| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
-| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
-| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
-
-**Verilog Example**  
-```Verilog
-assign led[0] = key[0] & key[1];
-```
-
-**Logic Diagram**  
-
- key[0] ----\  
-             AND ---> led[0]  
- key[1] ----/  
-
-**Truth Table**  
-| Input[1] | Input[0] | Output (AND) |
-| ------- | ------- | ------------ |
-| 0       | 0       | 0            |
-| 0       | 1       | 0            |
-| 1       | 0       | 0            |
-| 1       | 1       | 1            |  
-
-
-| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
-| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
-| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
-| **OR**   | \`     | \`                                          | Output is `1` if **at least one input is 1**  | \`a    | b\`  |
-| **XOR**  | `^`    | Output is `1` if **inputs are different**   | `a ^ b`                                       |        |      |
-| **NAND** | `~&`   | Output is `1` unless **both inputs are 1**  | `~(a & b)`                                    |        |      |
-| **NOR**  | \`\~   | \`                                          | Output is `1` only when **both inputs are 0** | \`\~(a | b)\` |
-| **XNOR** | `~^`   | Output is `1` if **inputs are the same**    | `~(a ^ b)`                                    |        |      |
-
-
-
-
+[!NOTE] I'll add the XOR, NOR,NAND, XNOR later
 
 **Logic Gates Verilog Code Introduction**
 Add a overview of how Logic Gate code works, and a few paragraphs of what are the logic gates, and what they look like in Verilog
