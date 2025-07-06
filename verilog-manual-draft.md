@@ -258,8 +258,8 @@ assign led[0] = key[0] & key[1];
 
 **Logic Diagram**  
 <pre>   key[0] ----\ 
-              AND ---> led[0] 
-  key[1] ----/ </pre>
+               AND ---> led[0] 
+   key[1] ----/ </pre>
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (AND) |
