@@ -494,12 +494,12 @@ output logic [7:0] led,
 When this code is synthisized, if will generate the following pins/wires you can connect to:  
 key[0]  
 key[1]  
-key[2] 
-key[3]  
-key[4] 
-key[5] 
-key[6] 
-key[7] 
+key[2]  
+key[3]   
+key[4]  
+key[5]  
+key[6]  
+key[7]  
 
 led[0]  
 led[1]  
