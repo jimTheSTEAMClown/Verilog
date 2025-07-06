@@ -446,7 +446,7 @@ module hackathon_top
 endmodule
 ```
 ---
-**Comment to controle the FPGA Bash flow**
+**Comment Used To Control The FPGA Bash flow**
 ```
 // Board configuration: tang_nano_9k_lcd_480_272_tm1638_hackathon
 // This module uses few parameterization and relaxed typing rules
@@ -481,31 +481,59 @@ module hackathon_top
     inout  logic [3:0] gpio
 );
 ```
-This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your design.  While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO board using a serial bus, you can imagine the following block diagram reprisentation.  
+This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your Top Level Verilog Block.  
+
+```
+input  logic [7:0] key,
+output logic [7:0] led,
+```
+**inout** defines the direction of the signal pin, **logic** defines the type of "wire", \[7:0\] defines how many signals are generated in this "bus", and **key** is the name of the signals.
+
+**output** defines the direction of the signal pin, **logic** defines the type of "wire", \[7:0\] defines how many signals are generated in this "bus", and **led** is the name of the signals.
+
+When this code is synthisized, if will generate the following pins/wires you can connect to:  
+key[0]  
+key[1]  
+key[2] 
+key[3]  
+key[4] 
+key[5] 
+key[6] 
+key[7] 
+
+led[0]  
+led[1]  
+led[2]  
+led[3]  
+led[4]  
+led[5]   
+led[6]   
+led[7]     
+
+While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO board using a serial bus, for these first Logic and Mux labs, you can imagine the following block diagram reprisentation.  
 
 <pre> 
-┌────────────────────┐               ┌───────────────────┐
-│Hackathon Top (FPGA)│                │    GPIO Module   │
-│                    │                │                  │
-│   input  key[0]    │ ◄───────────── |  Push Button 0   │
-│   input  key[1]    │ ◄───────────── |  Push Button 1   │
-│   input  key[2]    │ ◄───────────── |  Push Button 2   │
-│   input  key[3]    │ ◄───────────── |  Push Button 3   │
-│   input  key[4]    │ ◄───────────── |  Push Button 4   │
-│   input  key[5]    │ ◄───────────── |  Push Button 5   │
-│   input  key[6]    │ ◄───────────── |  Push Button 6   │
-│   input  key[7]    │ ◄───────────── |  Push Button 7   │
-│                    │                │                  │
-│   output led[0]    │ ─────────────► |  LED 0           │
-│   output led[1]    │ ─────────────► |  LED 1           │
-│   output led[2]    │ ─────────────► |  LED 2           │
-│   output led[3]    │ ─────────────► |  LED 3           │
-│   output led[4]    │ ─────────────► |  LED 4           │
-│   output led[5]    │ ─────────────► |  LED 5           │
-│   output led[6]    │ ─────────────► |  LED 6           │
-│   output led[7]    │ ─────────────► |  LED 7           │
-└────────────────────┘                └──────────────────┘
-
+┌────────────────────┐                ┌─────────────────┐
+│Hackathon Top (FPGA)│                │    GPIO Module  │
+│                    │                │                 │
+│   input  key[0]    │ ◄───────────── │  Push Button 0  │
+│   input  key[1]    │ ◄───────────── │  Push Button 1  │
+│   input  key[2]    │ ◄───────────── │  Push Button 2  │
+│   input  key[3]    │ ◄───────────── │  Push Button 3  │
+│   input  key[4]    │ ◄───────────── │  Push Button 4  │
+│   input  key[5]    │ ◄───────────── │  Push Button 5  │
+│   input  key[6]    │ ◄───────────── │  Push Button 6  │
+│   input  key[7]    │ ◄───────────── │  Push Button 7  │
+│                    │                │                 │
+│   output led[0]    │ ─────────────► │  LED 0          │
+│   output led[1]    │ ─────────────► │  LED 1          │
+│   output led[2]    │ ─────────────► │  LED 2          │
+│   output led[3]    │ ─────────────► │  LED 3          │
+│   output led[4]    │ ─────────────► │  LED 4          │
+│   output led[5]    │ ─────────────► │  LED 5          │
+│   output led[6]    │ ─────────────► │  LED 6          │
+│   output led[7]    │ ─────────────► │  LED 7          │
+└────────────────────┘                └─────────────────┘
 </pre>
 
 ```
