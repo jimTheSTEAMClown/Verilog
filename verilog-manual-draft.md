@@ -461,16 +461,15 @@ module hackathon_top
     input  logic       slow_clock,
     input  logic       reset,
 
+    // GPIO Board - Switches & LEDs
     input  logic [7:0] key,
     output logic [7:0] led,
 
     // A dynamic seven-segment display
-
     output logic [7:0] abcdefgh,
     output logic [7:0] digit,
 
     // LCD screen interface
-
     input  logic [8:0] x,
     input  logic [8:0] y,
 
@@ -478,12 +477,14 @@ module hackathon_top
     output logic [5:0] green,
     output logic [4:0] blue,
 
+    //Serial Connection To GPIO Board
     inout  logic [3:0] gpio
 );
 ```
 This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your Top Level Verilog Block.  
 
 ```
+// GPIO Board - Switches & LEDs
 input  logic [7:0] key,
 output logic [7:0] led,
 ```
@@ -510,7 +511,9 @@ led[5]
 led[6]   
 led[7]     
 
-While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO board using a serial bus, for these first Logic and Mux labs, you can imagine the following block diagram reprisentation.  
+For this Logic Gates Lab, you are only going ot be using the **input  logic [7:0] key,** and **output logic [7:0] led,**. The other inout/outpus for the dynamic seven-segment display & the LCD screen interface wires will be used and explained in subsiquent labs.  
+
+While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO board using a serial bus, that actially uses the inout  **logic [3:0] gpio** bus, for these first Logic and Mux labs, you can imagine the following block diagram reprisentation.  
 
 <pre> 
 ┌────────────────────┐                ┌─────────────────┐
