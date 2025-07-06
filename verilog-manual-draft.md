@@ -286,12 +286,14 @@ assign led[1] = key[0] | key[1];
 **Logic Diagram**  
 
  key[0] ----\    
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR ---> led[0]  
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OR ---> led[0]  
  key[1] ----/    
 
-<pre> key[0] ----\ OR ---> 
-                  led[0] 
-  key[1] ----/ </pre>
+<pre> 
+  key[0] ----\ 
+              OR ---> led[0] 
+  key[1] ----/ 
+</pre>
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (OR) |
