@@ -152,6 +152,7 @@ Give an overview for this component.  Include a "Why are we doing this step in t
 Overview of component
 * This Step will include… < list what they are going to accomplish >
 * This Step should take about N minutes to complete. 
+#### Learning Goals
 
 #### Lab Title - Verilog Code Eplanation
 > [!NOTE] - This section will show the Verilog code examples, explain how it works, and any new Verilog structures
@@ -221,15 +222,57 @@ Provide some additional resourses or assignments to look at
 
 ### Gates & Muxes
 #### Gates & Muxes Introduction
-> [!NOTE] - This section should link to a presentation.  Short explanation can be here, but really this should be linked to a presentation, and other resources to teach about this.  My plan for my class is to have a presentation, "Dig Deeper" assignments, some additional resources, and then a set of quiz questions.  This will be implemented in a Canvas LMS, and I'll publish this later in Jan 2026.
+In this first set of Verilog Labs, you are going to learn about Verilog Logic Gates and Multiplexers, called a Mux from now on.  
 
-Give an overview for this component.  Include a "Why are we doing this step in this order".  This can be a short or long or multiple paragraphs. 
-Overview of component
-* This Step will include… < list what they are going to accomplish >
-* This Step should take about N minutes to complete. 
+**Logic gates** are the building blocks of digital circuits. They process binary input values (0 or 1) and produce binary outputs based on specific logical rules. You use logic gates to build everything from simple decision-making circuits to complex CPUs and FPGAs.
+> Learn how to create simple logic gates using Verilog.
+> Use wire and assign statements to build AND, OR, XOR, NAND, NOR, and XNOR gates.
+> Control onboard LEDs using push button inputs to visualize the gate behavior.
+
+A **Multiplexer** (MUX) is a digital switch that selects one of several input signals and forwards it to a single output, based on control (select) signals.
+> Build a 2-to-1 MUX using assign out = sel ? in1 : in0;
+> Observe how changing the select signal affects the output LED
+> Learn how to extend MUX structures to support more inputs or wider data
+
+In the following labs you will explor the Verilog syntax and coding structurs to build Logic Gates and Mux's
 
 #### Logic Gates Verilog Code
-> [!NOTE] - This section will show the Verilog code examples, explain how it works, and any new Verilog structures
+Logic gates form the foundation of all digital electronics. These basic building blocks process two or more binary input values/signals (0 and 1) and produce a single binary output based on logical rules. Gates like AND, OR, and XOR enable a wide range of operations.   
+
+They can be simple LED control to complex logic. In Verilog, logic gates are implemented using continuous assignments (assign) and basic bitwise operators such as &, |, and ^. The following labs will introduces you to the Verilog syntax used to model and test these gates using Verilog on an FPGA platform, preparing you to build decision making circuits.  
+
+This set of labs will introduce and let you build Verilog code to implement six fundamental logic gates. You will have an opertunity to build AND, OR, XOR, NAND,  NOR, and XNOR Verilog implementations, connecting Push Button switches to LED's.   
+
+Each gate processes two binary inputs (0 = LOW, 1 = HIGH) and produces a binary output based on a specific logical rule. Let's take a look at the Logic Gate logical rules:
+#### AND 
+An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
+**Logical Rules**  
+| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
+| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
+| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
+**Verilog Example**  
+```Verilog
+assign led[0] = key[0] & key[1];
+```
+
+**Logic Diagram**  
+
+ key[0] ----\
+             AND ---> led[0]
+ key[1] ----/
+
+**Truth Table**  
+| Input[1] | Input[0] | Output (AND) |
+| ------- | ------- | ------------ |
+| 0       | 0       | 0            |
+| 0       | 1       | 0            |
+| 1       | 0       | 0            |
+| 1       | 1       | 1            |
+
+
+
+
+
 **Logic Gates Verilog Code Introduction**
 Add a overview of how Logic Gate code works, and a few paragraphs of what are the logic gates, and what they look like in Verilog
 ```Verilog
