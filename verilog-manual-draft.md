@@ -247,9 +247,9 @@ Each gate processes two binary inputs (0 = LOW, 1 = HIGH) and produces a binary 
 #### AND 
 An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
 **Logical Rules**  
-| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
-| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
-| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
+| Gate     | Symbol | Description                                 | Output Rule |  
+| -------- | ------ | ------------------------------------------- | ----------- |   
+| **AND**  | `&`    | Output is `1` only if **both inputs are 1** | a & b       |
 
 **Verilog Example**  
 ```Verilog
@@ -274,9 +274,9 @@ assign led[0] = key[0] & key[1];
 An **OR** gate outputs 1 if at least one input is 1. It’s used when any of several inputs can activate a result.  An example would let an ouput LED turn on if either button A or button B were presed.  Only one of the inputs needs to be active to create a logical result of a 1 on the output.  
 
 **Logical Rules**  
-| Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
-| -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
-| **OR**   | \`     | \`                                          | Output is `1` if **at least one input is 1**  | \`a    | b\`  |
+| Gate     | Symbol | Description                                      | Output Rule |  
+| -------- | ------ | ------------------------------------------------ | ----------- |   
+| **OR**  | `|`    | Output is `1` only if **at least one input is 1** | a '|' b     |
 
 **Verilog Example**  
 ```Verilog
