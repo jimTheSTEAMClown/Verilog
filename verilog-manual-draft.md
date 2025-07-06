@@ -472,8 +472,8 @@ Take a look at these diagrams and make sure you understand that they are equvele
                AND ---> led[0] 
    key[1] ----/ 
 
-<pre>   key[0] ----> a ----\ 
-                       AND ---> led[0] 
+   key[0] ----> a ----\ 
+                  AND ---> led[0] 
    key[1] ----> /  a ----/</pre>
 </pre>
 
