@@ -474,7 +474,7 @@ Take a look at these diagrams and make sure you understand that they are equvele
 
    key[0] ----> a ----\ 
                        AND ---> led[0] 
-   key[1] ----> a ----/</pre>
+   key[1] ----> b ----/</pre>
 </pre>
 
 ##### Exercise 2: Use a wire assigment
