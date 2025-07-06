@@ -274,9 +274,9 @@ assign led[0] = key[0] & key[1];
 An **OR** gate outputs 1 if at least one input is 1. It’s used when any of several inputs can activate a result.  An example would let an ouput LED turn on if either button A or button B were presed.  Only one of the inputs needs to be active to create a logical result of a 1 on the output.  
 
 **Logical Rules**  
-| Gate     | Symbol | Description                                      | Output Rule |  
-| -------- | ------ | ------------------------------------------------ | ----------- |   
-| **OR**  | \|    | Output is `1` only if **at least one input is 1** | a \| b     |
+| Gate     | Symbol | Description                                | Output Rule |  
+| -------- | ------ | ------------------------------------------ | ----------- |   
+| **OR**  | \|    | Output is `1` if **at least one input is 1** | a \| b      |
 
 **Verilog Example**  
 ```Verilog
@@ -285,9 +285,9 @@ assign led[1] = key[0] | key[1];
 
 **Logic Diagram**  
 
- key[0] ----\  
+ key[0] ----\    
              OR ---> led[0]  
- key[1] ----/  
+ key[1] ----/    
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (OR) |
