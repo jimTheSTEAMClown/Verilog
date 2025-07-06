@@ -256,8 +256,7 @@ An **AND** gate outputs 1 only if both inputs are 1. This gate is used when mult
 assign led[0] = key[0] & key[1];
 ```
 
-**Logic Diagram**  
-<pre>   key[0] ----\ 
+**Logic Diagram**  <pre>   key[0] ----\ 
               AND ---> led[0] 
   key[1] ----/ </pre>
 
@@ -285,7 +284,7 @@ assign led[1] = key[0] | key[1];
 **Logic Diagram**  
 <pre> key[0] ----\ 
             OR ---> led[0] 
-key[1] ----/ </pre>
+ key[1] ----/ </pre>
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (OR) |
