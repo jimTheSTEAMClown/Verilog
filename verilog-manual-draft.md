@@ -289,6 +289,8 @@ assign led[1] = key[0] | key[1];
              OR ---> led[0]  
  key[1] ----/    
 
+<pre> ``` key[0] ----\ OR ---> led[0] key[1] ----/ ``` </pre>
+
 **Truth Table**  
 | Input[1] | Input[0] | Output (OR) |
 | ------- | ------- | ------------ |
