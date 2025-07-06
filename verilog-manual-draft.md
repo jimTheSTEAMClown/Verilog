@@ -234,7 +234,7 @@ A **Multiplexer** (MUX) is a digital switch that selects one of several input si
 * Observe how changing the select signal affects the output LED
 * Learn how to extend MUX structures to support more inputs or wider data
 
-In the following labs you will explor the Verilog syntax and coding structurs to build Logic Gates and Mux's
+In the following labs you will explore the Verilog syntax and coding structurs to build Logic Gates and Mux's
 
 #### Logic Gates Verilog Code
 Logic gates form the foundation of all digital electronics. These basic building blocks process two or more binary input values/signals (0 and 1) and produce a single binary output based on logical rules. Gates like AND, OR, and XOR enable a wide range of operations.   
