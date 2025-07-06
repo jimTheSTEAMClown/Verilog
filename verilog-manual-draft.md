@@ -276,7 +276,7 @@ An **OR** gate outputs 1 if at least one input is 1. It’s used when any of sev
 **Logical Rules**  
 | Gate     | Symbol | Description                                      | Output Rule |  
 | -------- | ------ | ------------------------------------------------ | ----------- |   
-| **OR**  | `|`    | Output is `1` only if **at least one input is 1** | a '|' b     |
+| **OR**  | \|    | Output is `1` only if **at least one input is 1** | a \| b     |
 
 **Verilog Example**  
 ```Verilog
