@@ -250,6 +250,7 @@ An **AND** gate outputs 1 only if both inputs are 1. This gate is used when mult
 | Gate     | Symbol | Description                                 | Output Rule                                   |        |      |
 | -------- | ------ | ------------------------------------------- | --------------------------------------------- | ------ | ---- |
 | **AND**  | `&`    | Output is `1` only if **both inputs are 1** | `a & b`                                       |        |      |
+
 **Verilog Example**  
 ```Verilog
 assign led[0] = key[0] & key[1];
@@ -257,9 +258,9 @@ assign led[0] = key[0] & key[1];
 
 **Logic Diagram**  
 
- key[0] ----\
-             AND ---> led[0]
- key[1] ----/
+ key[0] ----\  
+             AND ---> led[0]  
+ key[1] ----/  
 
 **Truth Table**  
 | Input[1] | Input[0] | Output (AND) |
