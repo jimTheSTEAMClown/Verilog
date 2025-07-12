@@ -38,7 +38,7 @@ In the following labs you will explore the Verilog syntax and coding structurs t
 #### Target Software, Tools, Libraries & Drivers Setup
 > [!NOTE] - This section will cover any specific software, tools, Libraries or Drivers that are used
 
-#### **Topic #1** Verilog Code
+#### **AND** Verilog Constructs & Structures
 Introduction to new Verilog constructs and structures, like Logic Gates.  You can have a diagram and other text graphics ot sow it, like an AND Gate
 #### AND 
 An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
