@@ -1,23 +1,12 @@
 # Verilog Hackathon Education Kit Manual  
 ---
-### Delete Later - Do List - any one can pick these up and do them:
-> [!NOTE] 2025-07-04 - (STEAM Clown) - I will working on the Gates/Mux section labs today. connect on telegram or interact through this do when you push.  
-> [!NOTE]❓- (STEAM Clown) - Suggest a better title for this document.  Make some suggestions here to have this doc communicate better what we are trying to do.  "teaching verilg, showing steps to implement in hardware, help students gain a marketible skill."  
-> [ToDo] 🚧- (AnyOne) Update any section paragraphs to have breaks to make them more readable. make these breaks 78 characters to accommodate 78+CR+LF  
+### Delete Later - New Messages & Notes:
 
 ### Delete Later - Notes to Writers:
 > [!NOTE] - Just so you know, I'm (STEAM Clown) an going to be just editing this doc in place, so if you make a fork, just make sure you check it in correctly
-> [!NOTE]🚧- I'm going to add a lab template, where we can each pick a lab and update that section.
-  
-### Delete Later - Methods to show progress:
-If you want to show you are still working or done, add the following:  
-> [!NOTE] 🚧- Construction emoji, means you are still working on this section  
-> [!NOTE] ✅- Done with this task
-> [!NOTE] ❌- red "x", means you are not done, have not started, or are in progress
-> [!NOTE] 📝- This is a note to others. You can assign these notes to all or to a specific person.  
-> [!NOTE] ❎- If you see a note 📝 assigned to you or if you are going to accept it, replace it with a ❎  
-> [!NOTE] ❓- your name - Use this to ask a question to other writers/editors  
-> [!NOTE] 🅰️- your name - Use this to aswer the question
+> [!NOTE] 2025-07-04 - (STEAM Clown) - I will working on the Gates/Mux section labs today. connect on telegram or interact through this do when you push.  
+> [!NOTE]❓- (STEAM Clown) - Suggest a better title for this document.  Make some suggestions here to have this doc communicate better what we are trying to do.  "teaching verilg, showing steps to implement in hardware, help students gain a marketible skill."  
+> [ToDo] 🚧- (AnyOne) Update any section paragraphs to have breaks to make them more readable. make these breaks 78 characters to accommodate 78+CR+LF  
 
 ---
 ### Links That will be deleted later
@@ -43,7 +32,8 @@ If you want to show you are still working or done, add the following:
 *
 **Github Markdown**
 * [MD cheat sheet](https://www.markdownguide.org/cheat-sheet/)
-
+---
+---
 ---
 # Verilog Hackathon Education Kit Manual
 ## About This Manual  
@@ -707,3 +697,14 @@ Table
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |
+
+  
+### Delete Later - Methods to show progress:
+If you want to show you are still working or done, add the following:  
+> [!NOTE] 🚧- Construction emoji, means you are still working on this section  
+> [!NOTE] ✅- Done with this task
+> [!NOTE] ❌- red "x", means you are not done, have not started, or are in progress
+> [!NOTE] 📝- This is a note to others. You can assign these notes to all or to a specific person.  
+> [!NOTE] ❎- If you see a note 📝 assigned to you or if you are going to accept it, replace it with a ❎  
+> [!NOTE] ❓- your name - Use this to ask a question to other writers/editors  
+> [!NOTE] 🅰️- your name - Use this to aswer the question
