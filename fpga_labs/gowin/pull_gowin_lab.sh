@@ -11,9 +11,10 @@
 # Program/Design Name:		pull_gowin_lab.sh
 #
 # Copy This wget
-# wget -O pull_hackathon_test.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/hackaton_top.sh
+# wget -O pull_gowin_hackathon_lab.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/pull_gowin_lab.sh
 # ============================================================================
-
+echo "wget -O pull_gowin_hackathon_lab.sh https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/pull_gowin_lab.sh"
+echo " "
 echo "----------------------------------------------------"
 echo "---- Pick a lab file to copy to hackaton_top.sv ----"
 echo " 1) Hello World - Test that the Gowin & I/O board are connected "
