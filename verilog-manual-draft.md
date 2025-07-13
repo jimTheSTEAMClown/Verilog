@@ -168,15 +168,15 @@ In the following labs you will explore the Verilog syntax and coding structurs t
 **GPIO Module - Pin Description:**  
 | HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
 | ----------------- | ----------------- | ------------------------------------------------------- |  
-| J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |  
+| J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED & Key Board             |  
 | J1-CLK            | GPIO-26           | CLK (Clock) for synchronizing the data transfer         |  
 | J1- STB           | GPIO-27           | STB (Strobe) chip select or enable for communication    |  
 | J1- GND           | GND               | GND                                                     |  
 | J1- VCC           | VCC 3.3 V         | VCC 3.3 V                                               |   
 
-##### Target Software, Tools, Libraries & Drivers Setup
-> [!NOTE] - This section will cover any specific software, tools, Libraries or Drivers that are used
-
+#### Target Software, Tools, Libraries & Drivers Setup
+Make you have followed the instructions to install the Gowin tools and applications. See ![Gowin Install Instructions]()
+> [!NOTE] - Add link to Gowin Install Instructions
 
 #### Logic Gates Verilog Code
 Logic gates form the foundation of all digital electronics. These basic building blocks process two or more binary input values/signals (0 and 1) and produce a single binary output based on logical rules. Gates like AND, OR, and XOR enable a wide range of operations.   
@@ -186,7 +186,7 @@ They can be simple LED control to complex logic. In Verilog, logic gates are imp
 This set of labs will introduce and let you build Verilog code to implement six fundamental logic gates. You will have an opertunity to build AND, OR, XOR, NAND,  NOR, and XNOR Verilog implementations, connecting Push Button switches to LED's.   
 
 Each gate processes two binary inputs (0 = LOW, 1 = HIGH) and produces a binary output based on a specific logical rule. Let's take a look at the Logic Gate logical rules:
-#### AND 
+##### AND 
 An **AND** gate outputs 1 only if both inputs are 1. This gate is used when multiple conditions must be true to activate a signal. An example would be requiring two buttons to be pressed simultaneously.  
 **Logical Rules**  
 | Gate     | Symbol | Description                                 | Output Rule |  
@@ -197,7 +197,6 @@ An **AND** gate outputs 1 only if both inputs are 1. This gate is used when mult
 ```Verilog
 assign led[0] = key[0] & key[1];
 ```
-
 **Logic Diagram**  
 <pre>   key[0] ----\ 
                AND ---> led[0] 
