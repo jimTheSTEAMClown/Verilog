@@ -28,7 +28,7 @@ select lab in "Hello" "AND" "EXIT"; do
             echo "Setting lab variable to Hello" 
             echo "----------------------------------------------------"
             // https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/hello_world/hello_gowin.sv
-            $LAB="/hello_world/hello_gowin.sv"
+            LABPICK="/hello_world/hello_gowin.sv"
             break;;
         AND ) 
             echo "----------------------------------------------------"
@@ -60,7 +60,7 @@ if [ -e hackathon_top.sv ]; then
 else
   echo "File does not exist."
 fi
-wget -O hackathon_top.sv https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin$LAB
+wget -O hackathon_top.sv https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin$LABPICK
 echo "----------------------------------------------------"
 ls -l
 echo "----------------------------------------------------"
