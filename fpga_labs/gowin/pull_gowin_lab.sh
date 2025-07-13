@@ -25,15 +25,17 @@ select lab in "Hello" "AND" "EXIT"; do
     case $lab in
         Hello ) 
             echo "----------------------------------------------------"
-            echo "Setting lab variable to Hello" 
+            echo "setting Path To Hello" 
             echo "----------------------------------------------------"
             // https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/hello_world/hello_gowin.sv
             LABPICK="/hello_world/hello_gowin.sv"
             break;;
         AND ) 
             echo "----------------------------------------------------"
-            echo "Running Ubuntu Class Image Update" 
+            echo "setting Path To logic_gates " 
             echo "----------------------------------------------------"
+            // https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/1_gates/logic_gates.sv
+            LABPICK="/1_gates/logic_gates.sv"
             break;;    
         EXIT ) 
             echo "----------------------------------------------------"
@@ -45,18 +47,12 @@ done
 
 if [ -e hackathon_top.sv ]; then
   echo "File exists."
-  echo " Enter y/Y or Any Other Key to Quit"
-  read -p " Yes to BACK UP or hit any Key to continue with out backing up hackathon_top.sv?: " yesBacHackathon
-
-  if [ "$yesBacHackathon" == "y" ] || [ "$yesBacHackathon" == "Y" ]; then
+  
     echo "----------------------------------------------------"
     echo " Backing up hackathon_top.sv "
     echo "----------------------------------------------------"
     BACKUP_FILE="hackathon_top_$(date +%Y%m%d_%H%M%S).svBAC"
-    mv hackathon_top.sv "$BACKUP_FILE"
-  else
-    echo " Any Key - Skipping The BACKUP Step"
-  fi
+    mv hackathon_top.sv "$BACKUP_FILE"  
 else
   echo "File does not exist."
 fi
