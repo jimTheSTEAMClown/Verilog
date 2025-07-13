@@ -25,8 +25,10 @@ select lab in "Hello" "AND" "EXIT"; do
     case $lab in
         Hello ) 
             echo "----------------------------------------------------"
-            echo "Running Ubuntu Class Image Update" 
+            echo "Setting lab variable to Hello" 
             echo "----------------------------------------------------"
+            // https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin/hello_world/hello_gowin.sv
+            $LAB="/hello_world/hello_gowin.sv"
             break;;
         AND ) 
             echo "----------------------------------------------------"
@@ -58,7 +60,7 @@ if [ -e hackathon_top.sv ]; then
 else
   echo "File does not exist."
 fi
-wget -O hackathon_top.sv https://raw.githubusercontent.com/verilog-meetup/verilog-hackathon-education-kit-manual/refs/heads/main/SV-Examples/verilog_test.sv
+wget -O hackathon_top.sv https://raw.githubusercontent.com/jimTheSTEAMClown/Verilog/refs/heads/main/fpga_labs/gowin$LAB
 echo "----------------------------------------------------"
 ls -l
 echo "----------------------------------------------------"
