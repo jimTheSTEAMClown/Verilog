@@ -138,12 +138,12 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 #### 🛠️ LAB Activity: Hello World - Blinking An LED    
 > [!NOTE]🚧- This section will show the working design, running the scripts, and seeing that the hardware works, proving that your systems is working.
 
-
+> [!NOTE] - What other labs should we have to teach basic Verilog?  
+> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
 ---
 ## Verilog Labs
 ---
-> [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/verilog-meetup/basics-graphics-music) in the [Problems](https://github.com/verilog-meetup/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
-> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
+The following are the Labs that are found in the [Basic Music - Hackation](https://github.com/verilog-meetup/basics-graphics-music) in the [Problems](https://github.com/verilog-meetup/basics-graphics-music/tree/main/hackathon/problems) directory.  Make sure you followed the instructions to git clone and copy these design files.
 
 ### Gates & Muxes
 #### Gates & Muxes Introduction
@@ -160,6 +160,23 @@ A **Multiplexer** (MUX) is a digital switch that selects one of several input si
 * Learn how to extend MUX structures to support more inputs or wider data
 
 In the following labs you will explore the Verilog syntax and coding structurs to build Logic Gates and Mux's
+
+#### Target Hardware Setup and Pin Description  
+**HW-154 Board I/O Board - Hardware Connections:** This is the basic pin discriptions & wiring connections from the Gowin FPGA board to the HW-154 Board I/O Board as used in this set of lab challenges.
+![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
+
+**GPIO Module - Pin Description:**  
+| HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
+| ----------------- | ----------------- | ------------------------------------------------------- |  
+| J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |  
+| J1-CLK            | GPIO-26           | CLK (Clock) for synchronizing the data transfer         |  
+| J1- STB           | GPIO-27           | STB (Strobe) chip select or enable for communication    |  
+| J1- GND           | GND               | GND                                                     |  
+| J1- VCC           | VCC 3.3 V         | VCC 3.3 V                                               |   
+
+##### Target Software, Tools, Libraries & Drivers Setup
+> [!NOTE] - This section will cover any specific software, tools, Libraries or Drivers that are used
+
 
 #### Logic Gates Verilog Code
 Logic gates form the foundation of all digital electronics. These basic building blocks process two or more binary input values/signals (0 and 1) and produce a single binary output based on logical rules. Gates like AND, OR, and XOR enable a wide range of operations.   
@@ -641,23 +658,7 @@ Add a overview of how Logic Gate code works, and a few paragraphs of what are th
 ```Verilog
 Some code in Verilog
 ```
-##### Target Hardware Setup and Pin Description
-> [!NOTE] - This section should link to a presentation.
-> [!NOTE] - This section should have a picture showing the Gowin FPGA and GPIO module and the connections
-**GPIO Module - Hardware:** discription of hardware module and pins description as it's used i this lab.
-![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
 
-**GPIO Module - Pin Description:**  
-| HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
-| ----------------- | ----------------- | ------------------------------------------------------- |  
-| J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED&Key Board               |  
-| J1-CLK            | GPIO-26           | CLK (Clock) for synchronizing the data transfer         |  
-| J1- STB           | GPIO-27           | STB (Strobe) chip select or enable for communication    |  
-| J1- GND           | GND               | GND                                                     |  
-| J1- VCC           | VCC 3.3 V         | VCC 3.3 V                                               |   
-
-##### Target Software, Tools, Libraries & Drivers Setup
-> [!NOTE] - This section will cover any specific software, tools, Libraries or Drivers that are used
 
 ##### Verilog Logic Gate Labs / Challenges
 > [!NOTE] - This section will explain the specific Verilog Lab, what the goals are and outline the challenges.
