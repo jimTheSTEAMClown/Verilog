@@ -142,7 +142,7 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 ---
 ## Verilog Labs
 ---
-> [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/yuri-panchul/basics-graphics-music/tree/main) in the [Problems](https://github.com/yuri-panchul/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
+> [!NOTE] - The following are the Labs that are in the [Basic Music - Hackation](https://github.com/verilog-meetup/basics-graphics-music) in the [Problems](https://github.com/verilog-meetup/basics-graphics-music/tree/main/hackathon/problems) directory.  What other labs should we have to teach basic Verilog?  
 > [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
 
 ### Gates & Muxes
