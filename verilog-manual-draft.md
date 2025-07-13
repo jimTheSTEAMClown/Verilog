@@ -139,7 +139,13 @@ In this 🛠️ Lab Activity, you are going to install the Gowan Tang-Nano FPGA 
 > [!NOTE]🚧- This section will show the working design, running the scripts, and seeing that the hardware works, proving that your systems is working.
 
 > [!NOTE] - What other labs should we have to teach basic Verilog?  
-> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?  
+> [!NOTE] - STEAM CLown - I think that we should have a few more Labs to show using the GPIO board.  Also, maybe we should change the order of the labs, so we can do all the labs focused on the GPIO module before we start looking at the Display. Thoughts?
+
+> [!NOTE] We should have code in this first lab that startes with 
+> assign led [0] = key [0];
+> assign led [1] = key [1];
+> And then have the first lab to connect Led [6] and led[7] to key[6] and key[7]
+> before we have them do the logic gates.
 ---
 ## Verilog Labs
 ---
@@ -166,7 +172,7 @@ In the following labs you will explore the Verilog syntax and coding structurs t
 ![Basic Board Setup For Gates & Mux Labs](https://github.com/verilog-meetup/verilog-hackathon-education-kit-manual/blob/main/images/verilog-gowin-gpio-01.png)
 
 **GPIO Module - Pin Description:**  
-| HW-154 Board Pin  |     FPGA Pin      |          Description                                    |  
+| HW-154 I/O Board Pin  |     FPGA Pin      |          Description                                    |  
 | ----------------- | ----------------- | ------------------------------------------------------- |  
 | J1-DIO            | GPIO-25           | DIO data channel for HW-154 LED & Key Board             |  
 | J1-CLK            | GPIO-26           | CLK (Clock) for synchronizing the data transfer         |  
@@ -258,38 +264,38 @@ These 2 comments in Verilog is used by the Bash scripts that generate the FPGA f
 **Top Verilog Block Inputs and Outputs**  
 This section of the Verilog file defines all the Inputs and Outputs of the top level block.  Think of these as physical pins comming into or out of your Top Level Verilog Block.  
 
-```
+```Verilog
 module hackathon_top
 (
+    // System Clocks & Controls  
     input  logic       clock,
     input  logic       slow_clock,
     input  logic       reset,
 
-    // GPIO Board - Switches & LEDs
+    // HW-154 I/O Board - Switches & LEDs  
     input  logic [7:0] key,
     output logic [7:0] led,
 
-    // A dynamic seven-segment display
+    // A dynamic seven-segment display  
     output logic [7:0] abcdefgh,
     output logic [7:0] digit,
 
-    // LCD screen interface
+    // LCD screen interface  
     input  logic [8:0] x,
     input  logic [8:0] y,
-
     output logic [4:0] red,
     output logic [5:0] green,
     output logic [4:0] blue,
 
-    //Serial Connection To GPIO Board
+    // HW-154 I/O Board Communication Channel  
     inout  logic [3:0] gpio
 );
 ```
-We are going to only look at the GPIO Board - Switches & LEDs section
-```
-// GPIO Board - Switches & LEDs
-input  logic [7:0] key,
-output logic [7:0] led,
+We are going to only look at the HW-154 I/O Board - Switches & LEDs section
+```Verilog
+    // HW-154 I/O Board - Switches & LEDs  
+    input  logic [7:0] key,
+    output logic [7:0] led,
 ```
 **inout** defines the direction of the signal pin, **logic** defines the type of "wire", \[7:0\] defines how many signals are generated in this "bus", and **key** is the name of the signals.
 
@@ -342,11 +348,7 @@ While we actually pass signals between the Gowin FPGA board and the HW-154 GPIO 
 └────────────────────┘                └─────────────────┘
 </pre>
 
-[!NOTE] We should have code in this first lab that startes with 
-> assign led [0] = key [0];
-> assign led [1] = key [1];
-> And then have the first lab to connect Led [6] and led[7] to key[6] and key[7]
-> before we have them do the logic gates.
+#### 🛠️ LAB Activity #1: Run Un-Edited Code
 
 **Gate, Wire, and Continus Assignments**  
 Let's see how to connect and generate an **AND** gate. in the assign statment below, we are connecting the inputs key[0] and key[1] to the led[0].  the **&** that you see in the right hand side of the assignment **=** sign is telling this assign statment to preform a Bitwise AND operation between key[0] and key[1].
@@ -361,16 +363,29 @@ This will look like the following schematic diagram:
                AND ---> led[0] 
    key[1] ----/ </pre>
    
-```
-    //------------------------------------------------------------------------
-
+```Verilog
     // Gates, wires and continuous assignments
 
     assign led [0] = key [0] & key [1];
-
-    // Exercise 1: Change the code above.
-    // Assign to led [0] the result of OR operation (|).
 ```
+**Running the FPGA Bash scripts**
+* If you have not done so already, Open a consol window
+* cd to the ~/gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes directory
+```Bash
+cd gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes
+```
+* with out saving any edits to hackathon_top.sv run the **03_synthesize_for_fpga.bash** script
+```Bash
+./03_synthesize_for_fpga.bash
+```
+
+**What Success Looks Like** - Only when both buttons **key[0]** and **key[1]** are pressed (value 1), **led[0]** will be turned ON (1)
+
+
+
+
+
+
 ##### Exercise 1: Change AND to OR
 change the code **assign led [0] = key [0] & key [1];** to preform an **OR** assignment 
 
