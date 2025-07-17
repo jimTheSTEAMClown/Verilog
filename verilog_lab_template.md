@@ -279,3 +279,33 @@ This section will cover how and where to run the Verilog compile scripts to targ
 Provide some additional resourses or assignments to look at
 
 #### Multiplexer Verilog Code
+
+#### 🛠️ LAB Activity #1: Change AND to OR
+Describe the coding challenge  
+
+**Example Verilog Code**
+Explain the challenge
+```
+    //------------------------------------------------------------------------
+
+    // Gates, wires and continuous assignments
+
+    assign led [0] = key [0] & key [1];
+
+    // Exercise 1: Change the code above.
+    // Assign to led [0] the result of OR operation (|).
+```
+
+**Challenge**
+Change the code **assign led [0] = key [0] & key [1];** to preform an **OR** assignment 
+
+You can provide a hint section too...
+**Hint**: \| is the bitwise OR operator. When you replace the & bitwise operator with \| the the result assigned to the led[0] is true (1) if either key[0] or key[1] is pressed. 
+<pre>   key[0] ----\ 
+               OR ---> led[0] 
+   key[1] ----/ </pre>
+
+**Running the FPGA Bash scripts**
+This section will cover how and where to run the Verilog compile scripts to target the FPGA. Eplain what they should do... Edit your code, save it, and in your console window, run the bash script **03_synthesize_for_fpga.bash**
+
+**What Success Looks Like** - Describe what a successful completion of the lab looks like... When you press the key[0] the led[0] should now light up.  if you then only press key[1], the led[0] should also still light up.  If you press both key[0] and key[1], led[0] should also ligh up, because this is a bitwise **OR** will respond to either key[0], key[1] or both.
