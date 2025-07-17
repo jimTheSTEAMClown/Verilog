@@ -247,10 +247,12 @@ assign led[1] = key[0] | key[1];
 
 If you followed the GITHub clone instructions, you should have the following directory path:  
 **~/gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes/** where you will find the file **hackathon_top.sv**  
-
+```
+cd gowin/basics-graphics-music/hackathon/problems/1_gates_and_muxes
+```
 Open the **hackathon_top.sv** in a code editor,  VS-Code is recomended, but any text editor will work.  
 
-Let's review the Verilog syntax in this top level Verilog File.
+Let's review the Verilog syntax in this top level Verilog File. At this point, don't edit this file.  You are just looking at it.
 
 ---
 **Comment Used To Control The FPGA Bash flow**
