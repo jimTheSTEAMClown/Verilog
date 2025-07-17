@@ -241,7 +241,7 @@ assign led[1] = key[0] | key[1];
 | 1        | 0        | 1            |
 | 1        | 1        | 1            |  
 
-[!NOTE] I'll add the XOR, NOR,NAND, XNOR later
+> [!NOTE] I'll add the XOR, NOR,NAND, XNOR later
 
 #### Logic Gates Verilog Code Introduction
 
